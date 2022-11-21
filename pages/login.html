@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>LGPD Quiz - Login</title>
+    <link rel="stylesheet" href="../assets/css/style-login-register.css">
+    <link rel="icon" type="image/x-icon" href="../assets/images/solus_favicon.png">
+</head>
+<body>
+    <div class="container">
+        <form class="form" id="login" action="{% url 'login' %}" method="POST">
+            <h1 class="form__title">Acesso</h1> <br>
+            <div class="form__input-group">
+                <input type="text" class="form__input" id="email" name="email" autofocus placeholder="E-mail">
+            </div>
+            <div class="form__input-group">
+                <input type="password" class="form__input" id="password" name="senha" autofocus placeholder="Senha">
+            </div>
+            <button class="form__button" type="button" onclick="login()">Entrar</button>
+            <p class="form__text">
+                <a class="form__link" href="register.html" id="linkCreateAccount">Não tem uma conta? Crie uma</a>
+            </p>
+        </form>
+        <div id="fail-msg"></div>
+    </div>
+
+    <script src="../assets/js/script.js"></script>
+</body>
+</html>

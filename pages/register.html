@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>LGPD Quiz - Cadastro</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="../assets/css/style-login-register.css">
+    <link rel="icon" type="image/x-icon" href="../assets/images/solus_favicon.png">
+</head>
+<body>
+    <div class="container">
+  <!-- Register Form -->
+        <h1>Cadastro</h1>
+        <form class="form" id="createAccount" action="{% url 'cadastro' %}" method="POST">
+            <div class="form__input-group">
+                <input type="text" name="firstName" id="register-firstName" class="form__input" placeholder="Primeiro Nome" required>
+            </div>
+            <div class="form__input-group">
+                <input type="text" name="lastName" id="register-lastName" class="form__input" placeholder="Sobrenome" required>
+            </div>
+            <div class="form__input-group">
+                <input type="text" name="companyName" id="register-companyName" class="form__input" placeholder="Nome da Empresa" required>  
+            </div>
+            <div class="form__input-group">
+                <input type="password" name="password" id="register-password" class="form__input" placeholder="Senha" required> 
+            </div>
+            <div class="form__input-group">
+                <input type="password" name="password" id="register-confirm-password" class="form__input" placeholder="Confirme Senha" required>
+            </div> 
+            <div class="form__input-group"> 
+                <input type="email" name="email" id="register-email" class="form__input" placeholder="Email Corporativo" required>
+            </div>
+            <div class="form__input-group">
+                <input type="tel" nome="phone" id="register-phone" class="form__input" pattern="\([0-9]{2}\) [9]{1}[0-9]{4}-[0-9]{4}" placeholder="(XX) 9XXXX-XXXX" required>
+            </div>
+            <button class="form__button" type="button" onclick="register()">Cadastrar</button>
+        </form>
+        <div id="form_msg"></div>
+        <div class="form__text">
+            <a class="form__link" href="termo.html" target="_blank">Leia os termos de uso</a>
+        </div>
+        <div class="form__text">
+            <a class="form__link" href="login.html" id="linkLogin">Já possui uma conta? Acesse</a>
+        </div>
+    </div>
+    
+    <script src="../assets/js/script.js"></script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+</body>
+</html>

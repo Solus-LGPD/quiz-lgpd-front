@@ -1,0 +1,36 @@
+body{
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+}
+.container{
+    max-width: 1140px;
+    margin: auto;
+}
+.bar{
+    background-color: 	c;
+    width: 168px;
+    height: 22px;
+}
+header .line{
+    background-color: 	#00BFFF;
+    height: 10px;
+}
+.header_area{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+}
+.header_logo{
+    padding: 0px 20px 0px 20px;
+}
+.header_logo img{
+    width: 204px;
+    height: 64px;
+}
+.entry-content{
+    padding: 25px 100px;
+}
+ol{
+    margin-top: 40px;
+}
