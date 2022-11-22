@@ -12,6 +12,7 @@
     <div class="container">
   <!-- Register Form -->
         <h1>Cadastro</h1>
+
         <form class="form" id="createAccount" action="{% url 'cadastro' %}" method="POST">
             <div class="form__input-group">
                 <input type="text" name="firstName" id="register-firstName" class="form__input" placeholder="Primeiro Nome" required>
@@ -36,13 +37,17 @@
             </div>
             <button class="form__button" type="button" onclick="register()">Cadastrar</button>
         </form>
+
         <div id="form_msg"></div>
+
         <div class="form__text">
             <a class="form__link" href="termo.html" target="_blank">Leia os termos de uso</a>
         </div>
+
         <div class="form__text">
             <a class="form__link" href="login.html" id="linkLogin">Já possui uma conta? Acesse</a>
         </div>
+        
     </div>
     
     <script src="../assets/js/script.js"></script>

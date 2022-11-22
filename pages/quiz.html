@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>LGPD Quiz - Solus IT</title>
+   <!-- FontAwesome-cdn include -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+   <!-- Google fonts -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&display=swap" rel="stylesheet">
+   <!-- Bootstrap-css include -->
+   <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+   <!-- Animate-css include -->
+   <link rel="stylesheet" href="../assets/css/animate.min.css">
+   <!-- Main-StyleSheet include -->
+   <link rel="stylesheet" href="../assets/css/style_quiz.css">
+   <link rel="icon" type="image/x-icon" href="../assets/images/solus_favicon.png">
+</head>
+<body>
+
+   <div class="wrapper position-relative">
+      <div class="container-fluid px-5">
+         <div class="step_bar_content ps-5 pt-5">
+            <h5 class="text-white text-uppercase d-inline-block">Quiz LGPD</h5>
+         </div>
+         <div class="progress_bar steps_bar mt-3 ps-5 d-inline-block">
+            <div class="step rounded-pill d-inline-block text-center position-relative active current">1</div>
+            <div class="step rounded-pill d-inline-block text-center position-relative">2</div>
+            <div class="step rounded-pill d-inline-block text-center position-relative">3</div>
+            <div class="step rounded-pill d-inline-block text-center position-relative">4</div>
+            <div class="step rounded-pill d-inline-block text-center position-relative">5</div>
+            <div class="step rounded-pill d-inline-block text-center position-relative">6</div>
+            <div class="step rounded-pill d-inline-block text-center position-relative">7</div>
+            <div class="step rounded-pill d-inline-block text-center position-relative">8</div>
+         </div>
+         <form class="multisteps_form position-relative" id="wizard" method="POST" action="{% url 'quiz' id_usuario %}">
+               <!------------------------ Step-1 ---------------------------->
+               <div class="multisteps_form_panel active" data-animation="slideVert">
+                  <div class="form_content">
+                     <div class="row">
+                        <div class="col-lg-4">
+                           <div class="form_title ps-5">
+                              <h1 class="text-white">{{ perguntas.0 }}</h1>
+                           </div>
+                        </div>
+                        <div class="col-lg-4 text-center">
+                           <div class="form_img">
+                              <img src="../assets/images/bg_1.png" alt="image_not_found">
+                           </div>
+                        </div>
+                        <div class="col-lg-4 text-end">
+                           <div class="form_items radio-list">
+                              <ul class="text-uppercase list-unstyled">
+                                 <li>
+                                    <label for="opt_1" class="step_1 rounded-pill animate__animated animate__fadeInRight animate_25ms">
+                                       <input type="radio" id="opt_1" name="stp_1_valor_selecao" value="0" required>
+                                       <span class="label-content d-inline-block text-center rounded-pill">Ainda não</span>
+                                    </label>
+                                 </li>
+                                 <li>
+                                    <label for="opt_2" class="step_1 rounded-pill  animate__animated animate__fadeInRight animate_50ms">
+                                       <input type="radio" id="opt_2" name="stp_1_valor_selecao" value="1">
+                                       <span class="label-content d-inline-block text-center rounded-pill">Tem planos para iniciar</span>
+                                    </label>
+                                 </li>
+                                 <li>
+                                    <label for="opt_3" class="step_1 rounded-pill animate__animated animate__fadeInRight animate_100ms">
+                                       <input type="radio" id="opt_3" name="stp_1_valor_selecao" value="2">
+                                       <span class="label-content d-inline-block text-center rounded-pill">Atende parcialmente</span>
+                                    </label>
+                                 </li>
+                                 <li>
+                                    <label for="opt_4" class="step_1 animate__animated animate__fadeInRight animate_150ms">
+                                       <input type="radio" id="opt_4" name="stp_1_valor_selecao" value="3">
+                                       <span class="label-content d-inline-block text-center rounded-pill">Atende integralmente</span>
+                                    </label>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <!---------- Form Button ---------->
+                  <div class="form_btn py-5 d-flex justify-content-center align-items-center">
+                     <button type="button" class="js-btn-next f_btn rounded-pill active text-uppercase" id="nextBtn"> Próxima Questão <span><i class="fas fa-arrow-right ps-1"></i></span></button>
+                  </div>
+               </div>
+               <!------------------------ Step-2 ---------------------------->
+               <div class="multisteps_form_panel" data-animation="slideVert">
+                  <div class="form_content">
+                     <div class="row">
+                        <div class="col-lg-4">
+                           <div class="form_title ps-5">
+                              <h1 class="text-white">{{ perguntas.1 }}</h1>
+                           </div>
+                        </div>
+                        <div class="col-lg-4 text-center">
+                           <div class="form_img">
+                              <img src="../assets/images/bg_2.png" alt="image_not_found">
+                           </div>
+                        </div>
+                        <div class="col-lg-4 text-end">
+                           <div class="form_items radio-list">
+                              <ul class="text-uppercase list-unstyled">
+                                 <li>
+                                    <label for="opt_5" class="step_2 rounded-pill animate__animated animate__fadeInRight animate_25ms">
+                                       <input type="radio" id="opt_5" class="required" name="stp_2_valor_selecao" value="0" required>
+                                       <span class="label-content d-inline-block text-center rounded-pill">Ainda não</span>
+                                    </label>
+                                 </li>
+                                 <li>
+                                    <label for="opt_6" class="step_2 rounded-pill animate__animated animate__fadeInRight animate_50ms">
+                                       <input type="radio" id="opt_6" name="stp_2_valor_selecao" value="1">
+                                       <span class="label-content d-inline-block text-center rounded-pill">Tem planos para iniciar</span>
+                                    </label>
+                                 </li>
+                                 <li>
+                                    <label for="opt_7" class="step_2 rounded-pill animate__animated animate__fadeInRight animate_100ms">
+                                       <input type="radio" id="opt_7" name="stp_2_valor_selecao" value="2">
+                                       <span class="label-content d-inline-block text-center rounded-pill">Atende parcialmente</span>
+                                    </label>
+                                 </li>
+                                 <li>
+                                    <label for="opt_8" class="step_2 rounded-pill animate__animated animate__fadeInRight animate_150ms">
+                                       <input type="radio" id="opt_8" name="stp_2_valor_selecao" value="3">
+                                       <span class="label-content d-inline-block text-center rounded-pill">Atende integralmente</span>
+                                    </label>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <!---------- Form Button ---------->
+                  <div class="form_btn py-5 d-flex justify-content-center align-items-center">
+                     <button type="button" class="js-btn-prev f_btn rounded-pill disable text-uppercase" id="prevBtn"><span><i class="fas fa-arrow-left pe-1"></i></span> Voltar </button>
+                     <button type="button" class="js-btn-next f_btn rounded-pill active text-uppercase" id="nextBtn"> Próxima Questão <span><i class="fas fa-arrow-right ps-1"></i></span></button>
+                  </div>
+               </div>
+               <!------------------------ Step-3 ---------------------------->
+               <div class="multisteps_form_panel" data-animation="slideVert">
+                  <div class="form_content">
+                     <div class="row">
+                        <div class="col-lg-4">
+                           <div class="form_title ps-5">
+                              <h1 class="text-white">{{ perguntas.2 }}</h1>
+                           </div>
+                        </div>
+                        <div class="col-lg-4 text-center">
+                           <div class="form_img">
+                              <img src="../assets/images/bg_3.png" alt="image_not_found">
+                           </div>
+                        </div>
+                        <div class="col-lg-4 text-end">
+                           <div class="form_items radio-list">
+                              <ul class="text-uppercase list-unstyled">
+                                 <li>
+                                    <label for="opt_9" class="step_3 rounded-pill animate__animated animate__fadeInRight animate_25ms">
+                                       <input type="radio" id="opt_9" class="required" name="stp_3_valor_selecao" value="0" required>
+                                       <span class="label-content d-inline-block text-center rounded-pill">Ainda não</span>
+                                    </label>
+                                 </li>
+                                 <li>
+                                    <label for="opt_10" class="step_3 rounded-pill animate__animated animate__fadeInRight animate_50ms">
+                                       <input type="radio" id="opt_10" name="stp_3_valor_selecao" value="1">
+                                       <span class="label-content d-inline-block text-center rounded-pill">Tem planos para iniciar</span>
+                                    </label>
+                                 </li>
+                                 <li>
+                                    <label for="opt_11" class="step_3 rounded-pill animate__animated animate__fadeInRight animate_100ms">
+                                       <input type="radio" id="opt_11" name="stp_3_valor_selecao" value="2">
+                                       <span class="label-content d-inline-block text-center rounded-pill">Atende parcialmente</span>
+                                    </label>
+                                 </li>
+                                 <li>
+                                    <label for="opt_12" class="step_3 rounded-pill animate__animated animate__fadeInRight animate_150ms">
+                                       <input type="radio" id="opt_12" name="stp_3_valor_selecao" value="3">
+                                       <span class="label-content d-inline-block text-center rounded-pill">Atende integralmente</span>
+                                    </label>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <!---------- Form Button ---------->
+                  <div class="form_btn py-5 d-flex justify-content-center align-items-center">
+                     <button type="button" class="js-btn-prev f_btn rounded-pill disable text-uppercase" id="prevBtn"><span><i class="fas fa-arrow-left pe-1"></i></span> Voltar </button>
+                     <button type="button" class="js-btn-next f_btn rounded-pill active text-uppercase" id="nextBtn"> Próxima Questão <span><i class="fas fa-arrow-right ps-1"></i></span></button>
+                  </div>
+               </div>
+               <!------------------------ Step-4 ---------------------------->
+               <div class="multisteps_form_panel" data-animation="slideVert">
+                  <div class="form_content">
+                     <div class="row">
+                        <div class="col-lg-4">
+                           <div class="form_title ps-5">
+                              <h1 class="text-white">{{ perguntas.3 }}</h1>
+                           </div>
+                        </div>
+                        <div class="col-lg-4 text-center">
+                           <div class="form_img">
+                              <img src="../assets/images/bg_4.png" alt="image_not_found">
+                           </div>
+                        </div>
+                        <div class="col-lg-4 text-end">
+                           <div class="form_items radio-list">
+                              <ul class="text-uppercase list-unstyled">
+                                 <li>
+                                    <label for="opt_13" class="step_4 rounded-pill animate__animated animate__fadeInRight animate_25ms">
+                                       <input type="radio" id="opt_13" class="required" name="stp_4_valor_selecao" value="0" required>
+                                       <span class="label-content d-inline-block text-center rounded-pill">Ainda não</span>
+                                    </label>
+                                 </li>
+                                 <li>
+                                    <label for="opt_14" class="step_4 rounded-pill animate__animated animate__fadeInRight animate_50ms">
+                                       <input type="radio" id="opt_14" name="stp_4_valor_selecao" value="1">
+                                       <span class="label-content d-inline-block text-center rounded-pill">Tem planos para iniciar.</span>
+                                    </label>
+                                 </li>
+                                 <li>
+                                    <label for="opt_15" class="step_4 rounded-pill animate__animated animate__fadeInRight animate_100ms">
+                                       <input type="radio" id="opt_15" name="stp_4_valor_selecao" value="2">
+                                       <span class="label-content d-inline-block text-center rounded-pill">Atende parcialmente</span>
+                                    </label>
+                                 </li>
+                                 <li>
+                                    <label for="opt_16" class="step_4 rounded-pill animate__animated animate__fadeInRight animate_150ms">
+                                       <input type="radio" id="opt_16" name="stp_4_valor_selecao" value="3">
+                                       <span class="label-content d-inline-block text-center rounded-pill">Atende integralmente</span>
+                                    </label>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <!---------- Form Button ---------->
+                  <div class="form_btn py-5 d-flex justify-content-center align-items-center">
+                     <button type="button" class="js-btn-prev f_btn rounded-pill disable text-uppercase" id="prevBtn"><span><i class="fas fa-arrow-left pe-1"></i></span> Voltar </button>
+                     <button type="button" class="js-btn-next f_btn rounded-pill active text-uppercase" id="nextBtn"> Próxima Questão <span><i class="fas fa-arrow-right ps-1"></i></span></button>
+                  </div>
+               </div>
+               <!------------------------ Step-5 ---------------------------->
+               <div class="multisteps_form_panel" data-animation="slideVert">
+               <div class="form_content">
+                  <div class="row">
+                     <div class="col-lg-4">
+                        <div class="form_title ps-5">
+                           <h1 class="text-white">{{ perguntas.4 }}</h1>
+                        </div>
+                     </div>
+                     <div class="col-lg-4 text-center">
+                        <div class="form_img">
+                           <img src="../assets/images/bg_5.png" alt="image_not_found">
+                        </div>
+                     </div>
+                     <div class="col-lg-4 text-end">
+                        <div class="form_items radio-list">
+                           <ul class="text-uppercase list-unstyled">
+                              <li>
+                                 <label for="opt_17" class="step_5 rounded-pill animate__animated animate__fadeInRight animate_25ms">
+                                    <input type="radio" id="opt_17" class="required" name="stp_5_valor_selecao" value="0" required>
+                                    <span class="label-content d-inline-block text-center rounded-pill">Ainda não</span>
+                                 </label>
+                              </li>
+                              <li>
+                                 <label for="opt_18" class="step_5 rounded-pill animate__animated animate__fadeInRight animate_50ms">
+                                    <input type="radio" id="opt_18" name="stp_5_valor_selecao" value="1">
+                                    <span class="label-content d-inline-block text-center rounded-pill">Tem planos para iniciar.</span>
+                                 </label>
+                              </li>
+                              <li>
+                                 <label for="opt_19" class="step_5 rounded-pill animate__animated animate__fadeInRight animate_100ms">
+                                    <input type="radio" id="opt_19" name="stp_5_valor_selecao" value="2">
+                                    <span class="label-content d-inline-block text-center rounded-pill">Atende parcialmente</span>
+                                 </label>
+                              </li>
+                              <li>
+                                 <label for="opt_20" class="step_5 rounded-pill animate__animated animate__fadeInRight animate_150ms">
+                                    <input type="radio" id="opt_20" name="stp_5_valor_selecao" value="3">
+                                    <span class="label-content d-inline-block text-center rounded-pill">Atende integralmente</span>
+                                 </label>
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <!---------- Form Button ---------->
+               <div class="form_btn py-5 d-flex justify-content-center align-items-center">
+                  <button type="button" class="js-btn-prev f_btn rounded-pill disable text-uppercase" id="prevBtn"><span><i class="fas fa-arrow-left pe-1"></i></span> Voltar </button>
+                  <button type="button" class="js-btn-next f_btn rounded-pill active text-uppercase" id="nextBtn"> Próxima Questão <span><i class="fas fa-arrow-right ps-1"></i></span></button>
+               </div>
+            </div>
+            <!------------------------ Step-6 ---------------------------->
+            <div class="multisteps_form_panel" data-animation="slideVert">
+               <div class="form_content">
+                  <div class="row">
+                     <div class="col-lg-4">
+                        <div class="form_title ps-5">
+                           <h1 class="text-white">{{ perguntas.5 }}</h1>
+                        </div>
+                     </div>
+                     <div class="col-lg-4 text-center">
+                        <div class="form_img">
+                           <img src="../assets/images/bg_6.png" alt="image_not_found">
+                        </div>
+                     </div>
+                     <div class="col-lg-4 text-end">
+                        <div class="form_items radio-list">
+                           <ul class="text-uppercase list-unstyled">
+                              <li>
+                                 <label for="opt_21" class="step_6 rounded-pill animate__animated animate__fadeInRight animate_25ms">
+                                    <input type="radio" id="opt_21" class="required" name="stp_6_valor_selecao" value="0" required>
+                                    <span class="label-content d-inline-block text-center rounded-pill">Ainda não</span>
+                                 </label>
+                              </li>
+                              <li>
+                                 <label for="opt_22" class="step_6 rounded-pill animate__animated animate__fadeInRight animate_50ms">
+                                    <input type="radio" id="opt_22" name="stp_6_valor_selecao" value="1">
+                                    <span class="label-content d-inline-block text-center rounded-pill">Tem planos para iniciar.</span>
+                                 </label>
+                              </li>
+                              <li>
+                                 <label for="opt_23" class="step_6 rounded-pill animate__animated animate__fadeInRight animate_100ms">
+                                    <input type="radio" id="opt_23" name="stp_6_valor_selecao" value="2">
+                                    <span class="label-content d-inline-block text-center rounded-pill">Atende parcialmente</span>
+                                 </label>
+                              </li>
+                              <li>
+                                 <label for="opt_24" class="step_6 rounded-pill animate__animated animate__fadeInRight animate_150ms">
+                                    <input type="radio" id="opt_24" name="stp_6_valor_selecao" value="3">
+                                    <span class="label-content d-inline-block text-center rounded-pill">Atende integralmente</span>
+                                 </label>
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <!---------- Form Button ---------->
+               <div class="form_btn py-5 d-flex justify-content-center align-items-center">
+                  <button type="button" class="js-btn-prev f_btn rounded-pill disable text-uppercase" id="prevBtn"><span><i class="fas fa-arrow-left pe-1"></i></span> Voltar </button>
+                  <button type="button" class="js-btn-next f_btn rounded-pill active text-uppercase" id="nextBtn"> Próxima Questão <span><i class="fas fa-arrow-right ps-1"></i></span></button>
+               </div>
+            </div>
+            <!------------------------ Step-7 ---------------------------->
+            <div class="multisteps_form_panel" data-animation="slideVert">
+               <div class="form_content">
+                  <div class="row">
+                     <div class="col-lg-4">
+                        <div class="form_title ps-5">
+                           <h1 class="text-white">{{ perguntas.6 }}</h1>
+                        </div>
+                     </div>
+                     <div class="col-lg-4 text-center">
+                        <div class="form_img">
+                           <img src="{% static 'quiz/images/bg_7.png' %}" alt="image_not_found">
+                        </div>
+                     </div>
+                     <div class="col-lg-4 text-end">
+                        <div class="form_items radio-list">
+                           <ul class="text-uppercase list-unstyled">
+                              <li>
+                                 <label for="opt_25" class="step_7 rounded-pill animate__animated animate__fadeInRight animate_25ms">
+                                    <input type="radio" id="opt_25" class="required" name="stp_7_valor_selecao" value="0" required>
+                                    <span class="label-content d-inline-block text-center rounded-pill">Ainda não</span>
+                                 </label>
+                              </li>
+                              <li>
+                                 <label for="opt_26" class="step_7 rounded-pill animate__animated animate__fadeInRight animate_50ms">
+                                    <input type="radio" id="opt_26" name="stp_7_valor_selecao" value="1">
+                                    <span class="label-content d-inline-block text-center rounded-pill">Tem planos para iniciar.</span>
+                                 </label>
+                              </li>
+                              <li>
+                                 <label for="opt_27" class="step_7 rounded-pill animate__animated animate__fadeInRight animate_100ms">
+                                    <input type="radio" id="opt_27" name="stp_7_valor_selecao" value="2">
+                                    <span class="label-content d-inline-block text-center rounded-pill">Atende parcialmente</span>
+                                 </label>
+                              </li>
+                              <li>
+                                 <label for="opt_28" class="step_7 rounded-pill animate__animated animate__fadeInRight animate_150ms">
+                                    <input type="radio" id="opt_28" name="stp_7_valor_selecao" value="3">
+                                    <span class="label-content d-inline-block text-center rounded-pill">Atende integralmente</span>
+                                 </label>
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <!---------- Form Button ---------->
+               <div class="form_btn py-5 d-flex justify-content-center align-items-center">
+                  <button type="button" class="js-btn-prev f_btn rounded-pill disable text-uppercase" id="prevBtn"><span><i class="fas fa-arrow-left pe-1"></i></span> Voltar </button>
+                  <button type="button" class="js-btn-next f_btn rounded-pill active text-uppercase" id="nextBtn"> Próxima Questão <span><i class="fas fa-arrow-right ps-1"></i></span></button>
+               </div>
+            </div>
+            <!------------------------ Step-8 ---------------------------->
+            <div class="multisteps_form_panel" data-animation="slideVert">
+               <div class="form_content">
+                  <div class="row">
+                     <div class="col-lg-4">
+                        <div class="form_title ps-5">
+                           <h1 class="text-white">{{ perguntas.7 }}</h1>
+                        </div>
+                     </div>
+                     <div class="col-lg-4 text-center">
+                        <div class="form_img">
+                           <img src="../assets/images/bg_9.png" alt="image_not_found">
+                        </div>
+                     </div>
+                     <div class="col-lg-4 text-end">
+                        <div class="form_items radio-list">
+                           <ul class="text-uppercase list-unstyled">
+                              <li>
+                                 <label for="opt_29" class="step_8 rounded-pill animate__animated animate__fadeInRight animate_25ms">
+                                    <input type="radio" id="opt_29" name="stp_8_valor_selecao" value="0">
+                                    <span class="label-content d-inline-block text-center rounded-pill">Ainda não</span>
+                                 </label>
+                              </li>
+                              <li>
+                                 <label for="opt_30" class="step_8 rounded-pill animate__animated animate__fadeInRight animate_50ms">
+                                    <input type="radio" id="opt_30" name="stp_8_valor_selecao" value="1">
+                                    <span class="label-content d-inline-block text-center rounded-pill">Tem planos para iniciar.</span>
+                                 </label>
+                              </li>
+                              <li>
+                                 <label for="opt_31" class="step_8 rounded-pill animate__animated animate__fadeInRight animate_100ms">
+                                    <input type="radio" id="opt_31" name="stp_8_valor_selecao" value="2">
+                                    <span class="label-content d-inline-block text-center rounded-pill">Atende parcialmente</span>
+                                 </label>
+                              </li>
+                              <li>
+                                 <label for="opt_32" class="step_8 rounded-pill animate__animated animate__fadeInRight animate_150ms">
+                                    <input type="radio" id="opt_32" name="stp_8_valor_selecao" value="3">
+                                    <span class="label-content d-inline-block text-center rounded-pill">Atende integralmente</span>
+                                 </label>
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <!---------- Form Button ---------->
+               <div class="form_btn py-5 d-flex justify-content-center align-items-center">
+                  <button type="button" class="js-btn-prev f_btn rounded-pill disable text-uppercase" id="prevBtn"><span><i class="fas fa-arrow-left pe-1"></i></span> Voltar </button>
+                  <button type="submit" class="f_btn rounded-pill active text-uppercase" id="nextBtn"> Enviar</button>
+               </div>
+            </div>
+         </form>
+      </div>
+   </div>
+
+   <div id="div_fixed" class="float" data-shrink="contact">
+      <a href="https://wa.me/5591998290015?text=Olá!%20Eu%20tenho%20interesse%20na%20consultoria%20LGPD%20Solus%20IT" target="_blank">
+          <div class="flex-items">
+              <img src="../assets/images/safe.png" alt="Entre em contato para estar em conformidade">
+              <span>Esteja em conformidade</span>
+          </div>
+      </a>
+  </div>
+   <!-- jQuery-js include -->
+   <script src="../assets/js/jquery-3.6.0.min.js"></script>
+   <!-- Bootstrap-js include -->
+   <script src="../assets/js/bootstrap.min.js"></script>
+   <!-- jQuery-validate-js include -->
+   <script src="../assets/js/jquery.validate.min.js"></script>
+   <!-- Custom-js include -->
+   <script src="../assets/js/script.js"></script>
+</body>
+</html>
