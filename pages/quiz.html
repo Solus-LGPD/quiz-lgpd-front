@@ -35,14 +35,18 @@
             <div class="step rounded-pill d-inline-block text-center position-relative">7</div>
             <div class="step rounded-pill d-inline-block text-center position-relative">8</div>
          </div>
-         <form class="multisteps_form position-relative" id="wizard" method="POST" action="{% url 'quiz' id_usuario %}">
+         <form class="multisteps_form position-relative" id="wizard" method="POST">
                <!------------------------ Step-1 ---------------------------->
                <div class="multisteps_form_panel active" data-animation="slideVert">
                   <div class="form_content">
                      <div class="row">
                         <div class="col-lg-4">
                            <div class="form_title ps-5">
-                              <h1 class="text-white">{{ perguntas.0 }}</h1>
+                              <h1 class="text-white">
+                                 A empresa já promoveu a indicação de um encarregado
+                                 (DPO) com conhecimento e
+                                 experiência suficientes e autonomia para implantar a LGPD?
+                              </h1>
                            </div>
                         </div>
                         <div class="col-lg-4 text-center">
@@ -93,7 +97,10 @@
                      <div class="row">
                         <div class="col-lg-4">
                            <div class="form_title ps-5">
-                              <h1 class="text-white">{{ perguntas.1 }}</h1>
+                              <h1 class="text-white">
+                                 A empresa já elaborou
+                                 Relatório de Impacto à Privacidade de Dados Pessoais-RIPD?
+                              </h1>
                            </div>
                         </div>
                         <div class="col-lg-4 text-center">
@@ -145,7 +152,12 @@
                      <div class="row">
                         <div class="col-lg-4">
                            <div class="form_title ps-5">
-                              <h1 class="text-white">{{ perguntas.2 }}</h1>
+                              <h1 class="text-white">
+                                 A empresa realizou um mapeamento
+                                 dos dados pessoais tratados versus
+                                 a hipótese legal/finalidade para a qual
+                                 esses dados são necessários?
+                              </h1>
                            </div>
                         </div>
                         <div class="col-lg-4 text-center">
@@ -197,7 +209,11 @@
                      <div class="row">
                         <div class="col-lg-4">
                            <div class="form_title ps-5">
-                              <h1 class="text-white">{{ perguntas.3 }}</h1>
+                              <h1 class="text-white">
+                                 A empresa elaborou uma Política de
+                                 Privacidade para cada serviço prestado. 
+                                 Afim de informar os direitos dos titulares de dados?
+                              </h1>
                            </div>
                         </div>
                         <div class="col-lg-4 text-center">
@@ -249,7 +265,9 @@
                   <div class="row">
                      <div class="col-lg-4">
                         <div class="form_title ps-5">
-                           <h1 class="text-white">{{ perguntas.4 }}</h1>
+                           <h1 class="text-white">
+                              A empresa já realizou um inventário dos serviços que tratam dados pessoais?
+                           </h1>
                         </div>
                      </div>
                      <div class="col-lg-4 text-center">
@@ -301,7 +319,11 @@
                   <div class="row">
                      <div class="col-lg-4">
                         <div class="form_title ps-5">
-                           <h1 class="text-white">{{ perguntas.5 }}</h1>
+                           <h1 class="text-white">
+                              A empresa já promoveu uma revisão ampla
+                              dos contratos em vigência para
+                              adequá-los à LGPD?
+                           </h1>
                         </div>
                      </div>
                      <div class="col-lg-4 text-center">
@@ -353,12 +375,17 @@
                   <div class="row">
                      <div class="col-lg-4">
                         <div class="form_title ps-5">
-                           <h1 class="text-white">{{ perguntas.6 }}</h1>
+                           <h1 class="text-white">
+                              A empresa efetivamente implantou os controles de segurança para os riscos
+                              tecnológicos e administrativos
+                              identificados no Relatório de Impacto à Proteção dos
+                              Dados Pessoais-RIPD?
+                           </h1>
                         </div>
                      </div>
                      <div class="col-lg-4 text-center">
                         <div class="form_img">
-                           <img src="{% static 'quiz/images/bg_7.png' %}" alt="image_not_found">
+                           <img src="../assets/images/bg_7.png" alt="image_not_found">
                         </div>
                      </div>
                      <div class="col-lg-4 text-end">
@@ -405,7 +432,11 @@
                   <div class="row">
                      <div class="col-lg-4">
                         <div class="form_title ps-5">
-                           <h1 class="text-white">{{ perguntas.7 }}</h1>
+                           <h1 class="text-white">
+                              A empresa realiza uma gestão de incidentes para tratar
+                              possíveis violações dos
+                              dados de forma efetiva?
+                           </h1>
                         </div>
                      </div>
                      <div class="col-lg-4 text-center">
@@ -448,7 +479,7 @@
                <!---------- Form Button ---------->
                <div class="form_btn py-5 d-flex justify-content-center align-items-center">
                   <button type="button" class="js-btn-prev f_btn rounded-pill disable text-uppercase" id="prevBtn"><span><i class="fas fa-arrow-left pe-1"></i></span> Voltar </button>
-                  <button type="submit" class="f_btn rounded-pill active text-uppercase" id="nextBtn"> Enviar</button>
+                  <button type="button" class="f_btn rounded-pill active text-uppercase" id="nextBtn" onclick="resultQuiz()"> Enviar</button>
                </div>
             </div>
          </form>
