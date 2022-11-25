@@ -2,9 +2,6 @@ const myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
 
 
-let userData;
-
-
 function login(){
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
@@ -38,7 +35,7 @@ function login(){
         return response.json();//
     })
     .then(result => {
-        userData = result;
+        const userData = result;
         const userDataAsJson = JSON.stringify(userData);
         sessionStorage.setItem('myData', userDataAsJson);
         console.log(userData);
@@ -104,7 +101,7 @@ function register(){
             return response.json()//
         })
         .then(result => {
-            userData = result
+            const userData = result
             console.log(userData)//
             const userDataAsJson = JSON.stringify(userData);
             sessionStorage.setItem('myData', userDataAsJson);
@@ -125,7 +122,7 @@ function register(){
 
 
 function resultQuiz(){
-  let form = document.getElementById('wizard');
+  const form = document.getElementById('wizard');
   let answers = [];
   let resultado = 0;
   let text = ' ';
@@ -234,13 +231,10 @@ function resultQuiz(){
   }
 
 
-
-
-
   const keyValue = sessionStorage.getItem('myData')
   const data = JSON.parse(keyValue);
 
-  
+
   myHeaders.append("Authorization", `Bearer ${data.token}`);
 
 
@@ -271,17 +265,17 @@ function resultQuiz(){
       sessionStorage.setItem('myResult', resultAsJson);
     }
   )
-  /*.then(setTimeout(function(){
+  .then(setTimeout(function(){
     window.location.href = '../pages/result.html'
-  }, 500))*/
+  }, 500))
   .catch(error => console.log("error", error));
 }
 
 
 function loadResult(){
-  
+
   const keyValue = sessionStorage.getItem('myResult')
   const data = JSON.parse(keyValue);
 
-  document.getElementById("result").innerHTML = data;
+  document.getElementById("result").innerHTML = data.result.result;
 }
